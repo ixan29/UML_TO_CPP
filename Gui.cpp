@@ -311,7 +311,7 @@ Info consoleGui()
     info.uxfPath = selectUxfFile();
     info.srcFolderPath = selectFolderPath();
 
-    additionnalOptions(info);
+    // additionnalOptions(info);
 
     return info;
 }

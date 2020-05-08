@@ -1402,4 +1402,7 @@ int main(int argc, char* argv[])
 
     for (auto& classData : classesData)
         writeFiles(classData, globalPackage.getDestination(classData));
+
+    std::cout << "The files have been generated successfully" << std::endl;
+    return 0;
 }
