@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>108</y>
+      <w>108</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Showable
+--
+--
+/+showInfo(): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>315</y>
+      <w>243</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Contact
+--
+-phoneNumber: string [get/set/mutex]
+-email: string [get/set/mutex]
+--
++Contact(person, phoneNumber, email)
+/+showInfo(): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>504</y>
+      <w>297</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>Agenda
+--
+-name: string [get/set/mutex]
+--
++Agenda(name, profile, contacts)
++showContacts(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>81</x>
+      <y>45</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>Date
+--
+-day: int [get/set]
+-month: int [get/set]
+-year: int [get/set]
+--
++Date(day,month,year)
++showInfo(): void
++operator&lt;=&gt;(other: Date&amp;): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>63</y>
+      <w>234</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+-firstName: string [get]
+-lastName: string [get]
+--
++Person(firstName, lastName, birthday)
+/+showInfo():void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>477</y>
+      <w>540</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>ProfessionnalContact
+--
+-additionnalEmails: vector&lt;string&gt; [get/has/add/remove/clear/mutex/singular(additionnalEmail)]
+--
++ProfessionnalContact(person, phoneNumber, email, additionnalEmails)
+/+showInfo(): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>594</y>
+      <w>369</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>CEO
+--
+-companyName: string [get]
+--
++CEO(person, phoneNumber, email, additionnalEmails, companyName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>144</y>
+      <w>243</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>396</y>
+      <w>279</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+*-contacts
+[get/add/remove/clear/mutex/singular(contact)]</panel_attributes>
+    <additional_attributes>30.0;120.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>9</x>
+      <y>333</y>
+      <w>360</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-profile [get/set/mutex]</panel_attributes>
+    <additional_attributes>10.0;190.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>153</y>
+      <w>189</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-creationDate [get]</panel_attributes>
+    <additional_attributes>150.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>387</x>
+      <y>144</y>
+      <w>225</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-person [get/set/mutex]</panel_attributes>
+    <additional_attributes>160.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>333</y>
+      <w>207</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+* -associates
+[get/has/add/remove/clear/
+mutex/singular(associate)]</panel_attributes>
+    <additional_attributes>80.0;160.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>396</y>
+      <w>45</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>261</x>
+      <y>90</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-birthday [get]</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>549</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>774</x>
+      <y>63</y>
+      <w>216</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>Properties
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>639</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Utils
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>324</x>
+      <y>270</y>
+      <w>765</w>
+      <h>423</h>
+    </coordinates>
+    <panel_attributes>Contacts
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>603</x>
+      <y>81</y>
+      <w>225</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>230.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
